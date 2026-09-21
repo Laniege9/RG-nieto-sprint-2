@@ -1,0 +1,167 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    background-color: #1E2349;
+    color: white;
+    
+    display: flex;
+    align-items: center;
+    
+    padding: 20px 60px;
+}
+
+header img {
+    width: 100px;
+    height: auto;
+    margin-right: 25px;
+}
+
+header h1 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #2E3460;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 18px 25px;
+}
+
+.banner {
+    min-height: 300px;
+
+    background-image:
+    linear-gradient(rgba(30, 35, 73, 0.80), rgba(30, 35, 73, 0.35)),
+    url("../img/banner-tecnologia.jpg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+
+    padding: 60px;
+}
+
+nav a:hover {
+    background-color: #BEDAFF;
+    color: #1E2349;
+}
+
+.banner-texto {
+    max-width: 600px;
+}
+
+.banner h2 {
+    font-size: 42px;
+    color: white;
+    margin-bottom: 15px;
+    color: #ffffff;
+    -webkit-text-stroke: 1px #000000;
+    paint-order: stroke fill;
+}
+
+.banner p {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 30px;
+    color: #ffffff;
+    -webkit-text-stroke: 1px #000000;
+    paint-order: stroke fill;
+}
+
+.boton-banner {
+    display: inline-block;
+
+    background-color: #BEDAFF;
+    color: #1E2349;
+
+    text-decoration: none;
+
+    padding: 14px 25px;
+
+    border-radius: 6px;
+
+    font-weight: 600;
+}
+
+.boton-banner:hover {
+    background-color: white;
+    color: #1E2349;
+}
+
+.buscador {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.buscador input {
+    width: 260px;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 6px 0 0 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    outline: none;
+}
+
+.buscador button {
+    padding: 12px 16px;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    background-color: #BEDAFF;
+    color: #1E2349;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.buscador button:hover {
+    background-color: white;
+}
+
+.contacto-nav {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 20px;
+}
+
+.contacto-nav span {
+    color: white;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.contacto-nav a {
+    padding: 8px;
+    font-size: 18px;
+}
+
+.contacto-nav a:hover {
+    background-color: transparent;
+    color: #BEDAFF;
+}
