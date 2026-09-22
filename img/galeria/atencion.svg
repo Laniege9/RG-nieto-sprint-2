@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320" role="img" aria-label="Atención personalizada">
+  <defs>
+    <linearGradient id="grad-atencion" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E2349"/>
+      <stop offset="100%" stop-color="#2E3460"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="320" rx="18" fill="url(#grad-atencion)"/>
+  <circle cx="400" cy="60" r="90" fill="#ffffff" opacity="0.05"/>
+  <circle cx="60" cy="270" r="70" fill="#ffffff" opacity="0.06"/>
+  <g transform="translate(190,90)">
+    <rect x="-40" y="-40" width="100" height="100" rx="24" fill="#ffffff" opacity="0.14"/>
+    <g transform="translate(-12,-12) scale(4.2)" fill="#ffffff">
+      <path d="M12 2a8 8 0 0 0-8 8v5a3 3 0 0 0 3 3h1v-7H6v-1a6 6 0 0 1 12 0v1h-2v7h1a3 3 0 0 0 3-3v-5a8 8 0 0 0-8-8z"/>
+    </g>
+  </g>
+  <text x="240" y="255" text-anchor="middle" font-family="'Poppins', Arial, sans-serif" font-size="24" font-weight="600" fill="#ffffff">Atención personalizada</text>
+</svg>

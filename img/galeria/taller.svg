@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320" role="img" aria-label="Taller y servicio técnico">
+  <defs>
+    <linearGradient id="grad-taller" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2E3460"/>
+      <stop offset="100%" stop-color="#72769B"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="320" rx="18" fill="url(#grad-taller)"/>
+  <circle cx="400" cy="60" r="90" fill="#ffffff" opacity="0.05"/>
+  <circle cx="60" cy="270" r="70" fill="#ffffff" opacity="0.06"/>
+  <g transform="translate(190,90)">
+    <rect x="-40" y="-40" width="100" height="100" rx="24" fill="#ffffff" opacity="0.14"/>
+    <g transform="translate(-12,-12) scale(4.2)" fill="#ffffff">
+      <path d="M21 6.5a4.5 4.5 0 0 1-6.1 4.2L8.5 17l-1.4-1.4 6.4-6.4A4.5 4.5 0 0 1 19.8 3l-3 3 1.4 1.4 3-3c.5.5.8 1.3.8 2.1zM4 19l2-2 1.5 1.5-2 2A1.06 1.06 0 1 1 4 19z"/>
+    </g>
+  </g>
+  <text x="240" y="255" text-anchor="middle" font-family="'Poppins', Arial, sans-serif" font-size="24" font-weight="600" fill="#ffffff">Taller y servicio técnico</text>
+</svg>
