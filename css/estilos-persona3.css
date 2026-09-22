@@ -1,0 +1,388 @@
+/* ============================================================
+   RG Nieto - Estilos complementarios
+   Páginas: FAQ, Blog, Contacto
+   Paleta institucional (Manual de Marca):
+   - Azul medianoche:   #1E2349
+   - Azul noche:        #2E3460
+   - Violeta azulado:   #72769B
+   - Azul grisáceo:     #859FC2
+   - Azul pastel:       #BEDAFF
+   Tipografía: Poppins
+   ============================================================ */
+
+/* ============================================================
+   1. NAVEGACIÓN
+   ============================================================ */
+
+/* Enlace activo en el nav */
+nav a.activo {
+    background-color: #BEDAFF;
+    color: #1E2349;
+    font-weight: 600;
+}
+
+/* ============================================================
+   2. ENCABEZADO DE SECCIÓN (páginas internas)
+   ============================================================ */
+
+.seccion-encabezado {
+    background-image:
+        linear-gradient(rgba(30, 35, 73, 0.88), rgba(46, 52, 96, 0.80)),
+        url("../img/banner-tecnologia.jpg");
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    padding: 55px 40px;
+    text-align: center;
+    border-bottom: 4px solid #BEDAFF;
+}
+
+.seccion-encabezado h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.seccion-encabezado h2 i {
+    color: #BEDAFF;
+    margin-right: 12px;
+}
+
+.seccion-encabezado p {
+    font-size: 17px;
+    margin: 0;
+    color: #E8EEF7;
+}
+
+/* ============================================================
+   3. CARDS
+   ============================================================ */
+
+.card-rg {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(30, 35, 73, 0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.card-rg:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 22px rgba(30, 35, 73, 0.22);
+}
+
+.card-rg .card-title {
+    color: #1E2349;
+    font-weight: 600;
+}
+
+.card-rg .card-text {
+    color: #4A4A4A;
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+/* ============================================================
+   4. PORTADAS DE CARDS CON ÍCONOS VECTORIALES (Blog)
+   ============================================================ */
+
+.card-rg-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 180px;
+    font-size: 80px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #1E2349, #2E3460);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.card-rg-icono i {
+    transition: transform 0.3s ease;
+}
+
+.card-rg:hover .card-rg-icono i {
+    transform: scale(1.15) rotate(-3deg);
+}
+
+/* Variantes por categoría */
+.card-rg-icono.icono-cargadores {
+    background: linear-gradient(135deg, #1E2349, #2E3460);
+}
+
+.card-rg-icono.icono-celulares {
+    background: linear-gradient(135deg, #2E3460, #72769B);
+}
+
+.card-rg-icono.icono-gaming {
+    background: linear-gradient(135deg, #72769B, #859FC2);
+}
+
+.card-rg-icono.icono-audio {
+    background: linear-gradient(135deg, #859FC2, #BEDAFF);
+    color: #1E2349;
+}
+
+.card-rg-icono.icono-productividad {
+    background: linear-gradient(135deg, #1E2349, #72769B);
+}
+
+.card-rg-icono.icono-reparaciones {
+    background: linear-gradient(135deg, #2E3460, #1E2349);
+}
+
+.card-rg-icono.icono-tendencias {
+    background: linear-gradient(135deg, #1E2349, #859FC2);
+}
+
+/* Destacado del blog (layout horizontal) */
+.col-md-5 .card-rg-icono {
+    height: 100%;
+    min-height: 250px;
+    font-size: 120px;
+}
+
+/* ============================================================
+   5. BOTONES
+   ============================================================ */
+
+.btn-rg {
+    background-color: #1E2349;
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 6px;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.btn-rg:hover,
+.btn-rg:focus {
+    background-color: #BEDAFF;
+    color: #1E2349;
+    box-shadow: 0 0 0 0.2rem rgba(190, 218, 255, 0.5);
+}
+
+/* ============================================================
+   6. ACORDEÓN (FAQ)
+   ============================================================ */
+
+.accordion-button:not(.collapsed) {
+    background-color: #BEDAFF;
+    color: #1E2349;
+    font-weight: 600;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.2rem rgba(190, 218, 255, 0.6);
+    border-color: #859FC2;
+}
+
+.accordion-button i {
+    color: #1E2349;
+}
+
+.accordion-item {
+    border: 1px solid #E1E7F0;
+    border-radius: 6px !important;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+/* ============================================================
+   7. TABLAS
+   ============================================================ */
+
+.tabla-rg {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(30, 35, 73, 0.08);
+}
+
+.tabla-rg thead {
+    background-color: #1E2349;
+    color: #ffffff;
+}
+
+.tabla-rg thead th {
+    border-color: #2E3460;
+    font-weight: 600;
+    padding: 14px;
+}
+
+.tabla-rg tbody td {
+    padding: 12px 14px;
+    vertical-align: middle;
+}
+
+.tabla-rg tbody tr:hover {
+    background-color: #F2F7FF;
+}
+
+/* ============================================================
+   8. LISTA DE CONTACTO
+   ============================================================ */
+
+.lista-contacto {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-contacto li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #EEF2F8;
+    color: #2E3460;
+    font-size: 15px;
+}
+
+.lista-contacto li:last-child {
+    border-bottom: none;
+}
+
+.lista-contacto li i {
+    color: #1E2349;
+    font-size: 18px;
+    min-width: 22px;
+    margin-top: 3px;
+}
+
+.lista-contacto li a {
+    color: #1E2349;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.lista-contacto li a:hover {
+    color: #72769B;
+    text-decoration: underline;
+}
+
+/* ============================================================
+   9. PAGINACIÓN DEL BLOG
+   ============================================================ */
+
+.pagination .page-link {
+    color: #1E2349;
+    border-color: #E1E7F0;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #1E2349;
+    border-color: #1E2349;
+    color: #ffffff;
+}
+
+.pagination .page-link:hover {
+    background-color: #BEDAFF;
+    color: #1E2349;
+    border-color: #BEDAFF;
+}
+
+/* ============================================================
+   10. ALERTAS
+   ============================================================ */
+
+.alert-info {
+    background-color: #EAF3FF;
+    border-color: #BEDAFF;
+    color: #1E2349;
+}
+
+.alert-info a.alert-link {
+    color: #2E3460;
+    font-weight: 600;
+}
+
+/* ============================================================
+   11. BADGES
+   ============================================================ */
+
+.badge {
+    font-weight: 500;
+    padding: 6px 10px;
+    font-size: 12px;
+}
+
+/* ===== Footer institucional ===== */
+footer {
+    background-color: #1E2349;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+}
+
+footer p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #E8EEF7;
+}
+
+footer a {
+    color: #BEDAFF;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+footer .redes-sociales {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+footer .redes-sociales a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #2E3460;
+    color: #BEDAFF;
+    font-size: 18px;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+footer .redes-sociales a:hover {
+    background-color: #BEDAFF;
+    color: #1E2349;
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+/* ============================================================
+   13. RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+    .seccion-encabezado {
+        padding: 40px 20px;
+    }
+    .seccion-encabezado h2 {
+        font-size: 26px;
+    }
+    .seccion-encabezado p {
+        font-size: 15px;
+    }
+    .card-rg-icono {
+        height: 140px;
+        font-size: 60px;
+    }
+    .col-md-5 .card-rg-icono {
+        min-height: 180px;
+        font-size: 80px;
+    }
+}
