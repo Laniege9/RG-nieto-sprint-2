@@ -156,7 +156,7 @@ main > section > h2 {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    
 }
 
 .tarjeta:hover {
