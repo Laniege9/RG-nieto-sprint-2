@@ -164,4 +164,58 @@ nav a:hover {
 .contacto-nav a:hover {
     background-color: transparent;
     color: #BEDAFF;
+
+
+    /* ===== Footer institucional ===== */
+footer {
+    background-color: #1E2349;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+}
+
+footer p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #E8EEF7;
+}
+
+footer a {
+    color: #BEDAFF;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+footer .redes-sociales {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+footer .redes-sociales a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #2E3460;
+    color: #BEDAFF;
+    font-size: 18px;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+footer .redes-sociales a:hover {
+    background-color: #BEDAFF;
+    color: #1E2349;
+    transform: translateY(-3px);
+    text-decoration: none;
+}
 }
