@@ -164,7 +164,7 @@ nav a:hover {
 .contacto-nav a:hover {
     background-color: transparent;
     color: #BEDAFF;
-
+}
 
     /* ===== Footer institucional ===== */
 footer {
@@ -218,7 +218,6 @@ footer .redes-sociales a:hover {
     transform: translateY(-3px);
     text-decoration: none;
 }
-}
 
 /* ===== Aquí compañeros pondré el estilo responsivo para pantallas de celular ===== */
 @media (max-width: 768px)
@@ -242,5 +241,6 @@ footer .redes-sociales a:hover {
     .buscador input{
         width: auto;
         flex: 1;
+        min-width: 0;
     }
 }
