@@ -1,17 +1,9 @@
 /* ==========================================================================
    PERSONA 2 — Identidad institucional y portafolio
-   Páginas: Nosotros / Servicios y portafolio
-   Componentes: Tarjetas, Galería de imágenes, Carrusel
+   Páginas: Nosotros / Servicios y portafolio / Index
+   Componentes: Tarjetas, Imágenes de producto, Galería, Carrusel
    Paleta y tipografía según Manual de Identidad Visual de RG Nieto
    ========================================================================== */
-
-/* Paleta institucional de referencia (Manual de Identidad Visual):
-   Azul medianoche #1E2349  -> texto principal, fondos corporativos, base del logo
-   Azul noche       #2E3460  -> jerarquías secundarias, títulos de apoyo
-   Violeta azulado  #72769B  -> tono medio, acentos de profundidad
-   Azul grisáceo    #859FC2  -> elementos secundarios, fondos de apoyo
-   Azul pastel      #BEDAFF  -> SOLO acentos, botones e íconos (nunca texto)
-*/
 
 /* ---------- Contenedor y utilidades generales ---------- */
 
@@ -117,13 +109,13 @@
     text-decoration: underline;
 }
 
-/* ---------- Secciones de producto del Home (contienen las tarjetas) ---------- */
-/* Nota: el layout general del Home es de Persona 1; aquí solo se da espaciado
-   y jerarquía tipográfica a las secciones donde se insertan las tarjetas de
-   producto, siguiendo el Manual de Identidad Visual. */
+/* ---------- Secciones de producto del Home ---------- */
 
 main > section {
-    padding: 60px 60px 70px 60px;
+    padding: 50px 40px 60px 40px;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box; /* Evita que el padding se sume al ancho total */
 }
 
 main > section:nth-child(even) {
@@ -142,9 +134,12 @@ main > section > h2 {
 
 .tarjetas-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 28px;
+    /* Reducido a 250px para que las 3 tarjetas quepan bien en laptops sin cortarse */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
     margin-top: 10px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .tarjeta {
@@ -156,7 +151,6 @@ main > section > h2 {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     display: flex;
     flex-direction: column;
-    
 }
 
 .tarjeta:hover {
@@ -164,6 +158,7 @@ main > section > h2 {
     box-shadow: 0 14px 28px rgba(30, 35, 73, 0.12);
 }
 
+/* Íconos de las tarjetas (para secciones que no son de productos) */
 .tarjeta .icono {
     width: 56px;
     height: 56px;
@@ -206,10 +201,43 @@ main > section > h2 {
     align-self: flex-start;
 }
 
-/* Tarjetas de producto dentro del Home (secciones josias) */
+/* Tarjetas de producto dentro del Home */
 .tarjeta.tarjeta-producto .icono {
     background-color: #2E3460;
 }
+
+/* ============================================================
+   ESTILOS PARA LAS IMÁGENES DE PRODUCTO (Fase 3)
+   ============================================================ */
+
+.imagen-producto {
+    width: 100%;
+    height: 220px; /* Altura fija para mantener simetría en las tarjetas */
+    background-color: #F8FAFD; /* Fondo muy claro para resaltar productos */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 15px;
+    border: 1px solid #EEF2F8;
+    box-sizing: border-box;
+}
+
+.imagen-producto img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Evita que la imagen se deforme o se corte */
+    transition: transform 0.35s ease;
+}
+
+/* Efecto Zoom al pasar el mouse por la tarjeta */
+.tarjeta:hover .imagen-producto img {
+    transform: scale(1.1);
+}
+
+/* ============================================================ */
 
 /* Tarjetas de valores institucionales (Nosotros) */
 .valores .tarjeta {
@@ -295,7 +323,7 @@ main > section > h2 {
     color: #E7ECFB;
 }
 
-/* ---------- Galería de imágenes (componente Persona 2) ---------- */
+/* ---------- Galería de imágenes ---------- */
 
 .galeria-grid {
     display: grid;
@@ -374,7 +402,7 @@ main > section > h2 {
     text-decoration: none;
 }
 
-/* ---------- Carrusel de portafolio (componente Persona 2) ---------- */
+/* ---------- Carrusel de portafolio ---------- */
 
 .carrusel {
     position: relative;
@@ -416,6 +444,25 @@ main > section > h2 {
     align-items: center;
     justify-content: center;
     font-size: 42px;
+}
+
+/* Imágenes dentro del carrusel */
+.imagen-slide {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 12px;
+}
+
+.imagen-slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 .carrusel-slide .etiqueta {
@@ -547,7 +594,11 @@ nav a.activo {
     }
 
     main > section {
-        padding: 40px 24px 50px 24px;
+        padding: 40px 15px 50px 15px; /* Margen reducido para pantallas medianas y celulares */
+    }
+    
+    .tarjetas-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Tarjetas un poco más pequeñas en móvil */
     }
 }
 
@@ -559,11 +610,6 @@ nav a.activo {
 
 /* ============================================
    Fix: contraste del logo sobre el header oscuro
-   Colores del logo muy cercanos al fondo del header
-   (#1E2349) -> círculo claro detrás para que se lea bien.
-   El leve translateY es un ajuste óptico: geométricamente
-   el logo ya está centrado en su archivo, pero visualmente
-   se percibía más arriba que abajo dentro del círculo.
    ============================================ */
 header img {
     width: 100px;
@@ -578,12 +624,6 @@ header img {
 
 /* ============================================
    Fix: el nav se salía del viewport en laptops
-   (1366px y menos), empujando "Servicios" y los
-   íconos de contacto fuera de pantalla y obligando
-   a bajar el zoom para verlos. La lista de nav no
-   tenía flex-wrap, así que los <li> no cabían en
-   una sola fila y desbordaban horizontalmente en
-   vez de acomodarse en una segunda línea.
    ============================================ */
 nav ul {
     flex-wrap: wrap;
@@ -593,8 +633,6 @@ nav ul {
     flex-wrap: wrap;
     row-gap: 6px;
 }
-
-
 
 /* ===== Footer institucional ===== */
 footer {
