@@ -14,5 +14,5 @@
       <path d="M12 2a8 8 0 0 0-8 8v5a3 3 0 0 0 3 3h1v-7H6v-1a6 6 0 0 1 12 0v1h-2v7h1a3 3 0 0 0 3-3v-5a8 8 0 0 0-8-8z"/>
     </g>
   </g>
-  <text x="240" y="255" text-anchor="middle" font-family="'Poppins', Arial, sans-serif" font-size="24" font-weight="600" fill="#ffffff">Atención personalizada</text>
+  <text x="240" y="255" text-anchor="middle" font-family="'Gotham', 'Montserrat', Arial, sans-serif" font-size="24" font-weight="500" fill="#ffffff">Atención personalizada</text>
 </svg>

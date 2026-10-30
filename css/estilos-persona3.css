@@ -1,83 +1,21 @@
 /* ============================================================
-   RG Nieto - Estilos complementarios
-   Páginas: FAQ, Blog, Contacto
-   Paleta institucional (Manual de Marca):
-   - Azul medianoche:   #1E2349
-   - Azul noche:        #2E3460
-   - Violeta azulado:   #72769B
-   - Azul grisáceo:     #859FC2
-   - Azul pastel:       #BEDAFF
-   Tipografía: Poppins
+   RG Nieto - Componentes Bootstrap personalizados
+   Páginas: Preguntas frecuentes, Blog y Contacto (Persona 3)
+   Integrado al Sprint III: los colores y la tipografía usan las
+   variables de css/tipografia.css y css/estilos.css, basadas en el
+   Manual de Identidad Visual. El encabezado, el menú y el pie de
+   página son los mismos de todo el sitio (css/estilos.css).
+   Este archivo se carga después de bootstrap.min.css.
    ============================================================ */
 
 /* ============================================================
-   0. HEADER Y LOGO (Estilo unificado con persona2.css)
-   ============================================================ */
-
-header img {
-    width: 100px;
-    height: 100px;
-    box-sizing: border-box;
-    object-fit: contain;
-    background-color: rgba(244, 247, 252, 0.92);
-    border-radius: 50%;
-    padding: 15px;
-    transform: translateY(4px);
-}
-
-/* ============================================================
-   1. NAVEGACIÓN
-   ============================================================ */
-
-/* Enlace activo en el nav */
-nav a.activo {
-    background-color: #BEDAFF;
-    color: #1E2349;
-    font-weight: 600;
-}
-
-/* ============================================================
-   2. ENCABEZADO DE SECCIÓN (páginas internas)
-   ============================================================ */
-
-.seccion-encabezado {
-    background-image:
-        linear-gradient(rgba(30, 35, 73, 0.88), rgba(46, 52, 96, 0.80)),
-        url("../img/banner-tecnologia.jpg");
-    background-size: cover;
-    background-position: center;
-    color: #ffffff;
-    padding: 55px 40px;
-    text-align: center;
-    border-bottom: 4px solid #BEDAFF;
-}
-
-.seccion-encabezado h2 {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: #ffffff;
-}
-
-.seccion-encabezado h2 i {
-    color: #BEDAFF;
-    margin-right: 12px;
-}
-
-.seccion-encabezado p {
-    font-size: 17px;
-    margin: 0;
-    color: #E8EEF7;
-}
-
-/* ============================================================
-   3. CARDS
+   1. CARDS
    ============================================================ */
 
 .card-rg {
     border: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 14px rgba(30, 35, 73, 0.12);
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(30, 35, 73, 0.10);
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     overflow: hidden;
     background-color: #ffffff;
@@ -85,22 +23,50 @@ nav a.activo {
 
 .card-rg:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 22px rgba(30, 35, 73, 0.22);
+    box-shadow: 0 12px 26px rgba(30, 35, 73, 0.16);
 }
 
 .card-rg .card-title {
-    color: #1E2349;
-    font-weight: 600;
+    color: var(--texto-principal);
+    font-size: var(--fs-h3);
+    font-weight: var(--peso-medium);
+    line-height: var(--lh-titulo);
+    margin: 10px 0;
 }
 
 .card-rg .card-text {
-    color: #4A4A4A;
-    font-size: 15px;
-    line-height: 1.55;
+    color: var(--texto-cuerpo);
+    font-size: var(--fs-cuerpo);
+    line-height: var(--lh-cuerpo);
+}
+
+.card-rg .card-footer {
+    background-color: transparent;
+    border-top: 1px solid var(--borde-suave);
+    padding: 14px 16px;
+}
+
+/* Las tarjetas de la página de contacto no se desplazan al pasar el mouse */
+.contacto-pagina .card-rg:hover {
+    transform: none;
+    box-shadow: 0 4px 14px rgba(30, 35, 73, 0.10);
+}
+
+.h-tarjeta {
+    font-size: var(--fs-h3);
+    font-weight: var(--peso-medium);
+    color: var(--texto-principal);
+    margin: 0 0 14px 0;
+}
+
+.h-tarjeta i,
+.card-rg h2 > i {
+    color: var(--violeta-azulado);
+    margin-right: 6px;
 }
 
 /* ============================================================
-   4. PORTADAS DE CARDS CON ÍCONOS VECTORIALES (Blog)
+   2. PORTADAS DE CARDS CON ÍCONOS (Blog)
    ============================================================ */
 
 .card-rg-icono {
@@ -108,10 +74,9 @@ nav a.activo {
     align-items: center;
     justify-content: center;
     height: 180px;
-    font-size: 80px;
+    font-size: 72px;
     color: #ffffff;
     background: linear-gradient(135deg, #1E2349, #2E3460);
-    transition: transform 0.3s ease;
     overflow: hidden;
 }
 
@@ -120,125 +85,136 @@ nav a.activo {
 }
 
 .card-rg:hover .card-rg-icono i {
-    transform: scale(1.15) rotate(-3deg);
+    transform: scale(1.12) rotate(-3deg);
 }
 
-/* Variantes por categoría */
-.card-rg-icono.icono-cargadores {
-    background: linear-gradient(135deg, #1E2349, #2E3460);
-}
+/* Variantes por categoría (solo colores de la paleta institucional) */
+.card-rg-icono.icono-cargadores    { background: linear-gradient(135deg, #1E2349, #2E3460); }
+.card-rg-icono.icono-celulares     { background: linear-gradient(135deg, #2E3460, #72769B); }
+.card-rg-icono.icono-gaming        { background: linear-gradient(135deg, #72769B, #859FC2); }
+.card-rg-icono.icono-audio         { background: linear-gradient(135deg, #859FC2, #BEDAFF); color: #1E2349; }
+.card-rg-icono.icono-productividad { background: linear-gradient(135deg, #1E2349, #72769B); }
+.card-rg-icono.icono-reparaciones  { background: linear-gradient(135deg, #2E3460, #1E2349); }
+.card-rg-icono.icono-tendencias    { background: linear-gradient(135deg, #1E2349, #859FC2); }
 
-.card-rg-icono.icono-celulares {
-    background: linear-gradient(135deg, #2E3460, #72769B);
-}
-
-.card-rg-icono.icono-gaming {
-    background: linear-gradient(135deg, #72769B, #859FC2);
-}
-
-.card-rg-icono.icono-audio {
-    background: linear-gradient(135deg, #859FC2, #BEDAFF);
-    color: #1E2349;
-}
-
-.card-rg-icono.icono-productividad {
-    background: linear-gradient(135deg, #1E2349, #72769B);
-}
-
-.card-rg-icono.icono-reparaciones {
-    background: linear-gradient(135deg, #2E3460, #1E2349);
-}
-
-.card-rg-icono.icono-tendencias {
-    background: linear-gradient(135deg, #1E2349, #859FC2);
-}
-
-/* Destacado del blog (layout horizontal) */
-.col-md-5 .card-rg-icono {
-    height: 100%;
+/* Artículo destacado (diseño horizontal) */
+.col-md-5.card-rg-icono {
+    height: auto;
     min-height: 250px;
-    font-size: 120px;
+    font-size: 110px;
+}
+
+.card-rg .card-body .etiqueta {
+    margin-bottom: 6px;
 }
 
 /* ============================================================
-   5. BOTONES
+   3. BOTONES
    ============================================================ */
 
 .btn-rg {
-    background-color: #1E2349;
+    background-color: var(--azul-medianoche);
     color: #ffffff;
     border: none;
-    font-weight: 600;
-    padding: 10px 22px;
+    font-weight: var(--peso-medium);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-mayus);
+    padding: 11px 22px;
     border-radius: 6px;
     transition: background-color 0.25s ease, color 0.25s ease;
 }
 
+.btn-rg.btn-sm {
+    font-size: 12px;
+    padding: 8px 14px;
+}
+
 .btn-rg:hover,
-.btn-rg:focus {
-    background-color: #BEDAFF;
-    color: #1E2349;
+.btn-rg:focus-visible {
+    background-color: var(--azul-pastel);
+    color: var(--azul-medianoche);
     box-shadow: 0 0 0 0.2rem rgba(190, 218, 255, 0.5);
 }
 
 /* ============================================================
-   6. ACORDEÓN (FAQ)
+   4. ACORDEÓN (Preguntas frecuentes)
    ============================================================ */
 
+.accordion-item {
+    border: 1px solid var(--borde-suave);
+    border-radius: 12px !important;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    margin: 0;
+}
+
+.accordion-button {
+    font-family: var(--fuente-marca);
+    font-size: var(--fs-cuerpo);
+    font-weight: var(--peso-medium);
+    color: var(--texto-principal);
+    padding: 18px 22px;
+    line-height: 1.35;
+}
+
 .accordion-button:not(.collapsed) {
-    background-color: #BEDAFF;
-    color: #1E2349;
-    font-weight: 600;
+    background-color: var(--azul-pastel);
+    color: var(--azul-medianoche);
+    box-shadow: none;
 }
 
 .accordion-button:focus {
-    box-shadow: 0 0 0 0.2rem rgba(190, 218, 255, 0.6);
-    border-color: #859FC2;
+    box-shadow: 0 0 0 0.2rem rgba(133, 159, 194, 0.45);
+    border-color: var(--azul-grisaceo);
 }
 
 .accordion-button i {
-    color: #1E2349;
+    color: var(--azul-medianoche);
+    width: 20px;
 }
 
-.accordion-item {
-    border: 1px solid #E1E7F0;
-    border-radius: 6px !important;
-    margin-bottom: 10px;
-    overflow: hidden;
+.accordion-body {
+    color: var(--texto-cuerpo);
+    line-height: var(--lh-cuerpo);
+    padding: 18px 22px 20px;
+}
+
+.accordion-body strong {
+    font-weight: var(--peso-bold);
+    color: var(--texto-principal);
 }
 
 /* ============================================================
-   7. TABLAS
+   5. TABLAS
    ============================================================ */
 
 .tabla-rg {
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 10px rgba(30, 35, 73, 0.08);
-}
-
-.tabla-rg thead {
-    background-color: #1E2349;
-    color: #ffffff;
+    margin-bottom: 0;
 }
 
 .tabla-rg thead th {
-    border-color: #2E3460;
-    font-weight: 600;
+    background-color: var(--azul-medianoche);
+    color: #ffffff;
+    border-color: var(--azul-noche);
+    font-weight: var(--peso-medium);
     padding: 14px;
 }
 
 .tabla-rg tbody td {
     padding: 12px 14px;
     vertical-align: middle;
-}
-
-.tabla-rg tbody tr:hover {
-    background-color: #F2F7FF;
+    color: var(--texto-cuerpo);
 }
 
 /* ============================================================
-   8. LISTA DE CONTACTO
+   6. LISTA DE CONTACTO
    ============================================================ */
 
 .lista-contacto {
@@ -253,7 +229,7 @@ nav a.activo {
     gap: 12px;
     padding: 10px 0;
     border-bottom: 1px solid #EEF2F8;
-    color: #2E3460;
+    color: var(--texto-cuerpo);
     font-size: 15px;
 }
 
@@ -262,142 +238,109 @@ nav a.activo {
 }
 
 .lista-contacto li i {
-    color: #1E2349;
+    color: var(--azul-medianoche);
     font-size: 18px;
     min-width: 22px;
     margin-top: 3px;
 }
 
-.lista-contacto li a {
-    color: #1E2349;
-    font-weight: 500;
-    text-decoration: none;
+.lista-contacto strong {
+    font-weight: var(--peso-medium);
+    color: var(--texto-principal);
 }
 
-.lista-contacto li a:hover {
-    color: #72769B;
-    text-decoration: underline;
+.lista-contacto a {
+    color: var(--azul-medianoche);
+    font-weight: var(--peso-medium);
 }
 
-/* ============================================================
-   9. PAGINACIÓN DEL BLOG
-   ============================================================ */
-
-.pagination .page-link {
-    color: #1E2349;
-    border-color: #E1E7F0;
+.lista-contacto a:hover {
+    color: var(--violeta-azulado);
 }
 
-.pagination .page-item.active .page-link {
-    background-color: #1E2349;
-    border-color: #1E2349;
-    color: #ffffff;
-}
-
-.pagination .page-link:hover {
-    background-color: #BEDAFF;
-    color: #1E2349;
-    border-color: #BEDAFF;
-}
-
-/* ============================================================
-   10. ALERTAS
-   ============================================================ */
-
-.alert-info {
-    background-color: #EAF3FF;
-    border-color: #BEDAFF;
-    color: #1E2349;
-}
-
-.alert-info a.alert-link {
-    color: #2E3460;
-    font-weight: 600;
-}
-
-/* ============================================================
-   11. BADGES
-   ============================================================ */
-
-.badge {
-    font-weight: 500;
-    padding: 6px 10px;
-    font-size: 12px;
-}
-
-/* ===== Footer institucional ===== */
-footer {
-    background-color: #1E2349;
-    color: #ffffff;
-    text-align: center;
-    padding: 40px 20px;
-    margin-top: 60px;
-}
-
-footer p {
-    margin: 8px 0;
-    font-size: 14px;
-    color: #E8EEF7;
-}
-
-footer a {
-    color: #BEDAFF;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-footer a:hover {
-    color: #ffffff;
-}
-
-footer .redes-sociales {
-    margin-top: 25px;
+.redes-contacto {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
+    gap: 12px;
 }
 
-footer .redes-sociales a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+.redes-contacto a {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    background-color: #2E3460;
-    color: #BEDAFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--fondo-claro);
+    color: var(--azul-medianoche);
     font-size: 18px;
-    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
 }
 
-footer .redes-sociales a:hover {
-    background-color: #BEDAFF;
-    color: #1E2349;
-    transform: translateY(-3px);
-    text-decoration: none;
+.redes-contacto a:hover {
+    background-color: var(--azul-pastel);
 }
 
 /* ============================================================
-   13. RESPONSIVE
+   7. FORMULARIO Y ALERTAS
+   ============================================================ */
+
+.form-label {
+    font-weight: var(--peso-medium);
+    color: var(--texto-principal);
+    font-size: var(--fs-secundario);
+}
+
+.form-control,
+.form-select,
+.input-group-text {
+    border-color: var(--azul-grisaceo);
+}
+
+.input-group-text {
+    background-color: var(--fondo-claro);
+    color: var(--violeta-azulado);
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+    border-color: var(--azul-medianoche);
+    box-shadow: 0 0 0 0.2rem rgba(133, 159, 194, 0.35);
+}
+
+.form-check-input:checked {
+    background-color: var(--azul-medianoche);
+    border-color: var(--azul-medianoche);
+}
+
+.alert {
+    border-radius: 10px;
+}
+
+.alert-info {
+    background-color: #EAF3FF;
+    border-color: var(--azul-pastel);
+    color: var(--azul-medianoche);
+}
+
+.alert-info .alert-link {
+    color: var(--azul-noche);
+    font-weight: var(--peso-bold);
+}
+
+/* ============================================================
+   8. RESPONSIVO
    ============================================================ */
 
 @media (max-width: 768px) {
-    .seccion-encabezado {
-        padding: 40px 20px;
-    }
-    .seccion-encabezado h2 {
-        font-size: 26px;
-    }
-    .seccion-encabezado p {
-        font-size: 15px;
-    }
     .card-rg-icono {
         height: 140px;
-        font-size: 60px;
+        font-size: 56px;
     }
-    .col-md-5 .card-rg-icono {
-        min-height: 180px;
-        font-size: 80px;
+
+    .col-md-5.card-rg-icono {
+        min-height: 170px;
+        font-size: 76px;
     }
 }

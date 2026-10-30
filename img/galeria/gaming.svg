@@ -14,5 +14,5 @@
       <path d="M7 7h10a5 5 0 0 1 5 5v3.5a2.5 2.5 0 0 1-4.6 1.4L16 15H8l-1.4 1.9A2.5 2.5 0 0 1 2 15.5V12a5 5 0 0 1 5-5zm1.5 2.5v1.5H7v1.5H8.5v1.5H10v-1.5h1.5v-1.5H10V9.5H8.5zM15.2 12a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm2.3-2a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
     </g>
   </g>
-  <text x="240" y="255" text-anchor="middle" font-family="'Poppins', Arial, sans-serif" font-size="24" font-weight="600" fill="#ffffff">Zona gaming</text>
+  <text x="240" y="255" text-anchor="middle" font-family="'Gotham', 'Montserrat', Arial, sans-serif" font-size="24" font-weight="500" fill="#ffffff">Zona gaming</text>
 </svg>

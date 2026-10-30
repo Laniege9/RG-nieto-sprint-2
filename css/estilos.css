@@ -1,214 +1,645 @@
+/* ==========================================================================
+   ESTILOS GLOBALES — RG Nieto
+   Estructura compartida por todas las páginas: encabezado, navegación,
+   banner, buscador y pie de página.
+   Refinamiento UI/UX Sprint III (Persona 1). La tipografía vive en
+   css/tipografia.css y los componentes de contenido en css/persona2.css.
+
+   Paleta institucional (Manual de Identidad Visual):
+   #1E2349 Azul medianoche · #2E3460 Azul noche · #72769B Violeta azulado
+   #859FC2 Azul grisáceo   · #BEDAFF Azul pastel (solo acentos, nunca texto
+   sobre fondos claros)
+   ========================================================================== */
+
+:root {
+    --azul-medianoche: #1E2349;
+    --azul-noche: #2E3460;
+    --violeta-azulado: #72769B;
+    --azul-grisaceo: #859FC2;
+    --azul-pastel: #BEDAFF;
+    --fondo-claro: #F4F7FC;
+    --borde-suave: #E4E9F5;
+    --margen-lateral: 60px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 70px; /* evita que el menú fijo tape los títulos al saltar a una sección */
 }
 
 body {
     margin: 0;
-    background-color: white;
-    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff;
 }
 
-/* ===== HEADER ===== */
-header {
-    background-color: #1E2349;
-    color: white;
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ---------- Accesibilidad ---------- */
+
+.saltar {
+    position: absolute;
+    left: 16px;
+    top: -60px;
+    z-index: 3000;
+    background-color: var(--azul-medianoche);
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: var(--peso-medium);
+    transition: top 0.2s ease;
+}
+
+.saltar:focus {
+    top: 12px;
+}
+
+.solo-lectores {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+:focus-visible {
+    outline: 3px solid var(--azul-grisaceo);
+    outline-offset: 2px;
+}
+
+/* ---------- Encabezado (logo positivo sobre fondo claro, según manual) ---------- */
+
+.encabezado {
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--borde-suave);
+}
+
+.encabezado-interno {
+    margin: 0 auto;
+    padding: 14px var(--margen-lateral);
     display: flex;
     align-items: center;
-    padding: 20px 60px;
+    gap: 28px;
 }
 
-header img {
-    width: 100px;
-    height: 100px;
-    box-sizing: border-box;
-    object-fit: contain;
-    background-color: rgba(244, 247, 252, 0.92);
-    border-radius: 50%;
-    padding: 15px;
-    transform: translateY(4px);
-    margin-right: 25px;
-}
-
-header h1 {
-    font-size: 32px;
-    font-weight: 700;
-}
-
-/* ===== NAV ===== */
-nav {
-    background-color: #2E3460;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-    flex-wrap: wrap;
-}
-
-nav a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 18px 25px;
-}
-
-nav a:hover {
-    background-color: #BEDAFF;
-    color: #1E2349;
-}
-
-nav a.activo {
-    background-color: #BEDAFF;
-    color: #1E2349;
-    font-weight: 600;
-}
-
-.contacto-nav {
-    margin-left: auto;
+.marca {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 0 20px;
-    flex-wrap: wrap;
+    text-decoration: none;
+    flex-shrink: 0;
 }
 
-.contacto-nav span {
-    color: white;
-    font-weight: 600;
-    margin-right: 5px;
+.marca img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
 }
 
-.contacto-nav a {
-    padding: 8px;
-    font-size: 18px;
+.marca-texto {
+    display: flex;
+    flex-direction: column;
 }
 
-.contacto-nav a:hover {
-    background-color: transparent;
-    color: #BEDAFF;
+.marca-nombre {
+    font-weight: var(--peso-black);
+    font-size: 24px;
+    line-height: 1.05;
+    color: var(--azul-medianoche);
+    letter-spacing: -0.01em;
 }
 
-/* ===== BUSCADOR Y BANNER ===== */
+.marca-lema {
+    font-size: var(--fs-nota);
+    font-weight: var(--peso-book);
+    color: var(--violeta-azulado);
+    line-height: 1.3;
+}
+
+/* ---------- Buscador ---------- */
+
 .buscador {
     margin-left: auto;
     display: flex;
-    align-items: center;
+    align-items: stretch;
+    width: 100%;
+    max-width: 360px;
 }
 
 .buscador input {
-    width: 260px;
-    padding: 12px 15px;
-    border: none;
+    flex: 1;
+    min-width: 0;
+    padding: 11px 16px;
+    border: 1px solid var(--azul-grisaceo);
+    border-right: none;
     border-radius: 6px 0 0 6px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
+    font-size: var(--fs-secundario);
+    color: var(--azul-medianoche);
+    background-color: #ffffff;
+}
+
+.buscador input::placeholder {
+    color: var(--violeta-azulado);
+}
+
+.buscador input:focus {
     outline: none;
+    border-color: var(--azul-medianoche);
+    box-shadow: 0 0 0 3px rgba(133, 159, 194, 0.35);
 }
 
 .buscador button {
-    padding: 12px 16px;
+    padding: 0 18px;
     border: none;
     border-radius: 0 6px 6px 0;
-    background-color: #BEDAFF;
-    color: #1E2349;
-    font-size: 16px;
+    background-color: var(--azul-medianoche);
+    color: #ffffff;
+    font-size: 15px;
     cursor: pointer;
 }
 
+.buscador button:hover {
+    background-color: var(--azul-noche);
+}
+
+/* ---------- Contacto rápido (íconos en el encabezado) ---------- */
+
+.contacto-rapido {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.contacto-rapido a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--azul-noche);
+    font-size: 17px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.contacto-rapido a:hover {
+    background-color: var(--azul-pastel);
+    color: var(--azul-medianoche);
+}
+
+/* ---------- Navegación principal ---------- */
+
+.navegacion {
+    background-color: var(--azul-noche);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(30, 35, 73, 0.18);
+}
+
+.menu-boton {
+    display: none; /* solo visible en pantallas pequeñas */
+}
+
+.menu {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0 calc(var(--margen-lateral) - 18px);
+    display: flex;
+    align-items: stretch;
+}
+
+.menu > li {
+    position: relative;
+}
+
+.menu a,
+.submenu-boton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 100%;
+    padding: 16px 18px;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: var(--fuente-marca);
+    font-size: 15px;
+    font-weight: var(--peso-medium);
+    line-height: 1.2;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.submenu-boton i {
+    font-size: 11px;
+    transition: transform 0.2s ease;
+}
+
+.menu > li > a:hover,
+.submenu-boton:hover,
+.submenu.abierto > .submenu-boton {
+    background-color: var(--azul-medianoche);
+}
+
+/* Página actual: barra inferior en azul pastel (acento, no texto) */
+.menu a[aria-current="page"] {
+    box-shadow: inset 0 -4px 0 var(--azul-pastel);
+}
+
+/* Submenú de productos */
+.submenu-lista {
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 230px;
+    background-color: #ffffff;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 14px 28px rgba(30, 35, 73, 0.18);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+
+.submenu:hover > .submenu-lista,
+.submenu:focus-within > .submenu-lista,
+.submenu.abierto > .submenu-lista {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.submenu:hover .submenu-boton i,
+.submenu.abierto .submenu-boton i {
+    transform: rotate(180deg);
+}
+
+.submenu-lista a {
+    color: var(--azul-medianoche);
+    padding: 11px 20px;
+    font-weight: var(--peso-book);
+}
+
+.submenu-lista a i {
+    width: 18px;
+    color: var(--violeta-azulado);
+}
+
+.submenu-lista a:hover {
+    background-color: var(--fondo-claro);
+}
+
+/* ---------- Banner principal (Inicio) ---------- */
+
 .banner {
-    min-height: 300px;
-    background-image: linear-gradient(rgba(30, 35, 73, 0.80), rgba(30, 35, 73, 0.35)), url("../img/banner-tecnologia.jpg");
+    min-height: 340px;
+    background-image:
+        linear-gradient(100deg, rgba(30, 35, 73, 0.92) 0%, rgba(30, 35, 73, 0.75) 45%, rgba(30, 35, 73, 0.30) 100%),
+        url("../img/banner-tecnologia.jpg");
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
-    padding: 60px;
+    padding: 70px var(--margen-lateral);
 }
 
 .banner-texto {
-    max-width: 600px;
+    max-width: 620px;
 }
 
-.banner h2 {
-    font-size: 42px;
-    color: white;
-    margin-bottom: 15px;
+.banner h1 {
+    color: #ffffff;
+    margin: 0 0 16px 0;
 }
 
 .banner p {
     font-size: 18px;
-    color: white;
-    margin-bottom: 30px;
+    color: #E7ECFB;
+    margin: 0 0 30px 0;
 }
 
+/* Botón principal (CTA): azul pastel sobre fondo oscuro, según manual */
 .boton-banner {
     display: inline-block;
-    background-color: #BEDAFF;
-    color: #1E2349;
+    background-color: var(--azul-pastel);
+    color: var(--azul-medianoche);
     text-decoration: none;
-    padding: 14px 25px;
+    padding: 14px 28px;
     border-radius: 6px;
-    font-weight: 600;
+    font-weight: var(--peso-medium);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-mayus);
+    transition: background-color 0.2s ease;
 }
 
 .boton-banner:hover {
-    background-color: white;
+    background-color: #ffffff;
 }
 
-/* ===== FOOTER ===== */
-footer {
-    background-color: #1E2349;
-    color: #ffffff;
-    text-align: center;
-    padding: 40px 20px;
-    margin-top: 60px;
-}
+/* ---------- Resultado del buscador (Inicio) ---------- */
 
-footer p {
-    margin: 8px 0;
-    font-size: 14px;
-    color: #E8EEF7;
-}
-
-footer a {
-    color: #BEDAFF;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-footer a:hover {
-    color: #ffffff;
-}
-
-footer .redes-sociales {
-    margin-top: 25px;
+.resultado-busqueda {
+    background-color: var(--fondo-claro);
+    border-bottom: 1px solid var(--borde-suave);
+    padding: 18px var(--margen-lateral);
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
+    align-items: center;
+    gap: 10px 20px;
+    color: var(--azul-medianoche);
 }
 
-footer .redes-sociales a {
-    display: inline-flex;
+.resultado-busqueda p {
+    margin: 0;
+}
+
+/* Con la búsqueda activa, las tarjetas conservan su ancho aunque queden pocas */
+.busqueda-activa .tarjetas-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.resultado-busqueda a {
+    color: var(--azul-medianoche);
+    font-weight: var(--peso-medium);
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* ---------- Pie de página (logo negativo sobre fondo oscuro, según manual) ---------- */
+
+.pie {
+    background-color: var(--azul-medianoche);
+    color: #DCE4F7;
+    margin-top: 0;
+}
+
+.pie-interno {
+    margin: 0 auto;
+    padding: 56px var(--margen-lateral) 40px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1.2fr 1fr;
+    gap: 40px;
+}
+
+.pie-marca img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-bottom: 14px;
+}
+
+.pie-marca .marca-nombre {
+    color: #ffffff;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.pie p,
+.pie li {
+    font-size: var(--fs-secundario);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.pie h2 {
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: var(--peso-medium);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-mayus);
+    margin: 0 0 16px 0;
+}
+
+.pie ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 9px;
+}
+
+.pie a {
+    color: #DCE4F7;
+    text-decoration: none;
+}
+
+.pie a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.pie li i {
+    width: 18px;
+    color: var(--azul-pastel);
+    margin-right: 6px;
+}
+
+.redes-sociales {
+    display: flex;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.redes-sociales a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(190, 218, 255, 0.35);
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background-color: #2E3460;
-    color: #BEDAFF;
-    font-size: 18px;
-    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+    font-size: 17px;
+    color: var(--azul-pastel);
 }
 
-footer .redes-sociales a:hover {
-    background-color: #BEDAFF;
-    color: #1E2349;
-    transform: translateY(-3px);
+.redes-sociales a:hover {
+    background-color: var(--azul-pastel);
+    color: var(--azul-medianoche);
     text-decoration: none;
+}
+
+.pie-legal {
+    border-top: 1px solid rgba(190, 218, 255, 0.15);
+    padding: 18px var(--margen-lateral);
+    text-align: center;
+}
+
+.pie-legal p {
+    font-size: var(--fs-nota);
+    color: var(--azul-grisaceo);
+}
+
+/* ==========================================================================
+   Adaptación del encabezado, menú y pie (componentes de navegación).
+   El resto del diseño responsivo del sitio se trabaja en la estrategia
+   responsiva general del equipo.
+   ========================================================================== */
+
+@media (max-width: 1100px) {
+    .contacto-rapido {
+        display: none;
+    }
+
+    .menu a,
+    .submenu-boton {
+        padding: 16px 13px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 900px) {
+    :root {
+        --margen-lateral: 24px;
+    }
+
+    .encabezado-interno {
+        flex-wrap: wrap;
+        gap: 12px 20px;
+    }
+
+    .buscador {
+        max-width: none;
+        margin-left: 0;
+        order: 3;
+    }
+
+    /* Botón de menú (hamburguesa) */
+    .menu-boton {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        padding: 14px var(--margen-lateral);
+        background: none;
+        border: none;
+        color: #ffffff;
+        font-family: var(--fuente-marca);
+        font-size: 15px;
+        font-weight: var(--peso-medium);
+        text-transform: uppercase;
+        letter-spacing: var(--tracking-mayus);
+        cursor: pointer;
+    }
+
+    .menu-boton i {
+        font-size: 18px;
+        width: 20px;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        padding: 0 0 10px 0;
+        max-height: calc(100vh - 56px);
+        overflow-y: auto;
+    }
+
+    .navegacion.abierta .menu {
+        display: flex;
+    }
+
+    .menu a,
+    .submenu-boton {
+        width: 100%;
+        padding: 14px var(--margen-lateral);
+        font-size: 15px;
+        justify-content: flex-start;
+    }
+
+    .menu a[aria-current="page"] {
+        box-shadow: inset 4px 0 0 var(--azul-pastel);
+    }
+
+    .submenu-boton i {
+        margin-left: auto;
+    }
+
+    /* En móvil el submenú se despliega dentro del menú, no flotando */
+    .submenu-lista {
+        position: static;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border-radius: 0;
+        background-color: var(--azul-medianoche);
+        padding: 4px 0;
+    }
+
+    .submenu:hover > .submenu-lista,
+    .submenu:focus-within > .submenu-lista {
+        display: none;
+    }
+
+    .submenu.abierto > .submenu-lista {
+        display: block;
+    }
+
+    .submenu:hover .submenu-boton i {
+        transform: none;
+    }
+
+    .submenu.abierto .submenu-boton i {
+        transform: rotate(180deg);
+    }
+
+    .submenu-lista a {
+        color: #ffffff;
+        padding-left: calc(var(--margen-lateral) + 18px);
+    }
+
+    .submenu-lista a i {
+        color: var(--azul-pastel);
+    }
+
+    .submenu-lista a:hover {
+        background-color: var(--azul-noche);
+    }
+
+    .banner {
+        min-height: 280px;
+        padding: 50px var(--margen-lateral);
+    }
+
+    .pie-interno {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+}
+
+@media (max-width: 560px) {
+    .marca-lema {
+        display: none;
+    }
+
+    .banner p {
+        font-size: 16px;
+    }
+
+    .pie-interno {
+        grid-template-columns: 1fr;
+    }
 }

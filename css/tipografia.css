@@ -1,0 +1,110 @@
+/* ==========================================================================
+   TIPOGRAFÍA CORPORATIVA — RG Nieto (Persona 1, Sprint III)
+   Basado en el Manual de Identidad Visual, sección "Tipografía corporativa".
+
+   Gotham es la tipografía oficial, pero no tiene licencia web gratuita.
+   Se usa Montserrat (Google Fonts), que el manual define como la alternativa
+   gratuita más cercana a Gotham en proporción y peso geométrico.
+   Si en el futuro se adquiere la licencia web de Gotham, basta con cargarla:
+   la pila de fuentes ya la pone en primer lugar.
+
+   Equivalencia de pesos (siempre pesos reales, nunca negritas "falsas"):
+     Gotham Black  -> Montserrat 900  (logotipo / wordmark)
+     Gotham Bold   -> Montserrat 700  (H1, titulares grandes)
+     Gotham Medium -> Montserrat 500  (H2, H3, botones, destacados)
+     Gotham Book   -> Montserrat 400  (texto corrido)
+     Gotham Light  -> Montserrat 300  (notas; nunca en tamaños pequeños)
+   ========================================================================== */
+
+:root {
+    /* Familia */
+    --fuente-marca: 'Gotham', 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+
+    /* Pesos */
+    --peso-black: 900;
+    --peso-bold: 700;
+    --peso-medium: 500;
+    --peso-book: 400;
+    --peso-light: 300;
+
+    /* Jerarquía web del manual (px) */
+    --fs-h1: clamp(32px, 2.2rem + 1.2vw, 48px);   /* 32–48 px, Bold   */
+    --fs-h2: clamp(24px, 1.3rem + 0.6vw, 28px);   /* 24–28 px, Medium */
+    --fs-h3: clamp(18px, 1rem + 0.3vw, 20px);     /* 18–20 px, Medium */
+    --fs-cuerpo: 16px;                            /* 16 px, Book      */
+    --fs-secundario: 14px;                        /* mínimo de lectura web */
+    --fs-nota: 13px;                              /* pie de página / notas 12–13 px */
+
+    /* Interlineado */
+    --lh-cuerpo: 1.5;      /* 1.4–1.5 x en texto corrido */
+    --lh-titulo: 1.15;     /* 1.1–1.2 x en títulos       */
+
+    /* Tracking para mayúsculas (botones, etiquetas): +0.05em a +0.08em */
+    --tracking-mayus: 0.06em;
+
+    /* Color de texto (manual: azul medianoche / azul noche sobre fondos claros) */
+    --texto-principal: #1E2349;
+    --texto-cuerpo: #2E3460;
+    --texto-apoyo: #72769B;
+}
+
+/* ---------- Base ---------- */
+
+body {
+    font-family: var(--fuente-marca);
+    font-weight: var(--peso-book);
+    font-size: var(--fs-cuerpo);
+    line-height: var(--lh-cuerpo);
+    color: var(--texto-cuerpo);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-synthesis: none; /* evita negritas y cursivas generadas por el navegador */
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--fuente-marca);
+    color: var(--texto-principal);
+    line-height: var(--lh-titulo);
+    margin-top: 0;
+}
+
+h1 {
+    font-size: var(--fs-h1);
+    font-weight: var(--peso-bold);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+    font-weight: var(--peso-medium);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+    font-weight: var(--peso-medium);
+}
+
+p, li {
+    font-size: var(--fs-cuerpo);
+    line-height: var(--lh-cuerpo);
+}
+
+small,
+.nota {
+    font-size: var(--fs-nota);
+    font-weight: var(--peso-book);
+    line-height: 1.45;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: var(--fuente-marca);
+}
+
+/* Mayúsculas sostenidas solo en etiquetas y botones cortos, con tracking */
+.etiqueta,
+.mayusculas {
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-mayus);
+}
