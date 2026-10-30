@@ -62,3 +62,19 @@ nav u1
         display: none;
     }
 }
+
+/* ===== aquí cambio lo del lightbox porque la imagen al presionarla se ve muy chica en el celular ===== */
+
+@media (max-width: 768px)
+{
+    .lightbox
+    {
+        padding: 10px;
+    }
+
+    .lightbox-cerrar
+    {
+        top: 16px;
+        right: 16px;
+    }
+}
