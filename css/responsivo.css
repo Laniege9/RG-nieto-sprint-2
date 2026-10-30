@@ -1,0 +1,80 @@
+/* ===== Aquí compañeros pondré el estilo responsivo para pantallas de celular ===== */
+@media (max-width: 768px)
+{
+    header{
+        flex-wrap: wrap;
+        padding: 16px 20px;
+        gap: 14px;
+    }
+
+    header h1{
+        font-size: 1.5rem;
+        margin: 0;
+    }
+
+    .buscador{
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .buscador input{
+        width: auto;
+        flex: 1;
+        min-width: 0;
+    }
+}
+
+/* ===== como flex-wrap me ayuda acomodar bajando fila, pondré el nav u1 que quepa mejor igual la clase contacto-nav ===== */
+
+nav ul
+{
+    flex-wrap: wrap;
+}
+
+.contacto-nav
+{
+    flex-wrap: wrap;
+    row-gap: 6px;
+}
+
+/* ===== aquí voy a poner ya la barrita deslizable para que el usuario pueda moverse a la izquierda y derecha en caso de que no quepa el contenido ===== */
+
+@media (max-width: 768px)
+{
+    nav ul
+    {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    nav li
+    {
+        flex-shrink: 0;
+    }
+
+    nav a
+    {
+        padding: 14px 16px;
+    }
+
+    .contacto-nav
+    {
+        display: none;
+    }
+}
+
+/* ===== aquí cambio lo del lightbox porque la imagen al presionarla se ve muy chica en el celular ===== */
+
+@media (max-width: 768px)
+{
+    .lightbox
+    {
+        padding: 10px;
+    }
+
+    .lightbox-cerrar
+    {
+        top: 10px;
+        right: 12px;
+    }
+}
