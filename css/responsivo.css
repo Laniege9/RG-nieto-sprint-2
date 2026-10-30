@@ -23,3 +23,42 @@
         min-width: 0;
     }
 }
+
+/* ===== como flex-wrap me ayuda acomodar bajando fila, pondré el nav u1 que quepa mejor igual la clase contacto-nav ===== */
+
+nav u1
+{
+    flex-wrap: wrap;
+}
+
+.contacto-nav
+{
+    flex-wrap: wrap;
+    row-gap: 6px;
+}
+
+/* ===== aquí voy a poner ya la barrita deslizable para que el usuario pueda moverse a la izquierda y derecha en caso de que no quepa el contenido ===== */
+
+@media (max-width: 768px)
+{
+    nav ul
+    {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    nav li
+    {
+        flex-shrink: 0;
+    }
+
+    nav a
+    {
+        padding: 14px 16px;
+    }
+
+    .contacto-nav
+    {
+        display: none;
+    }
+}
