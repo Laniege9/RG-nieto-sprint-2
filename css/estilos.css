@@ -164,7 +164,7 @@ nav a:hover {
 .contacto-nav a:hover {
     background-color: transparent;
     color: #BEDAFF;
-
+}
 
     /* ===== Footer institucional ===== */
 footer {
@@ -217,5 +217,4 @@ footer .redes-sociales a:hover {
     color: #1E2349;
     transform: translateY(-3px);
     text-decoration: none;
-}
 }
