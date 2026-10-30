@@ -8,19 +8,24 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+/* ===== HEADER ===== */
 header {
     background-color: #1E2349;
     color: white;
-    
     display: flex;
     align-items: center;
-    
     padding: 20px 60px;
 }
 
 header img {
     width: 100px;
-    height: auto;
+    height: 100px;
+    box-sizing: border-box;
+    object-fit: contain;
+    background-color: rgba(244, 247, 252, 0.92);
+    border-radius: 50%;
+    padding: 15px;
+    transform: translateY(4px);
     margin-right: 25px;
 }
 
@@ -29,18 +34,20 @@ header h1 {
     font-weight: 700;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
+/* ===== NAV ===== */
 nav {
     background-color: #2E3460;
     position: sticky;
     top: 0;
     z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -50,68 +57,43 @@ nav a {
     padding: 18px 25px;
 }
 
-.banner {
-    min-height: 300px;
-
-    background-image:
-    linear-gradient(rgba(30, 35, 73, 0.80), rgba(30, 35, 73, 0.35)),
-    url("../img/banner-tecnologia.jpg");
-    background-size: cover;
-    background-position: center;
-
-    display: flex;
-    align-items: center;
-
-    padding: 60px;
-}
-
 nav a:hover {
     background-color: #BEDAFF;
     color: #1E2349;
 }
 
-.banner-texto {
-    max-width: 600px;
-}
-
-.banner h2 {
-    font-size: 42px;
-    color: white;
-    margin-bottom: 15px;
-    color: #ffffff;
-    -webkit-text-stroke: 1px #000000;
-    paint-order: stroke fill;
-}
-
-.banner p {
-    font-size: 18px;
-    color: white;
-    margin-bottom: 30px;
-    color: #ffffff;
-    -webkit-text-stroke: 1px #000000;
-    paint-order: stroke fill;
-}
-
-.boton-banner {
-    display: inline-block;
-
+nav a.activo {
     background-color: #BEDAFF;
     color: #1E2349;
-
-    text-decoration: none;
-
-    padding: 14px 25px;
-
-    border-radius: 6px;
-
     font-weight: 600;
 }
 
-.boton-banner:hover {
-    background-color: white;
-    color: #1E2349;
+.contacto-nav {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 20px;
+    flex-wrap: wrap;
 }
 
+.contacto-nav span {
+    color: white;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.contacto-nav a {
+    padding: 8px;
+    font-size: 18px;
+}
+
+.contacto-nav a:hover {
+    background-color: transparent;
+    color: #BEDAFF;
+}
+
+/* ===== BUSCADOR Y BANNER ===== */
 .buscador {
     margin-left: auto;
     display: flex;
@@ -138,35 +120,47 @@ nav a:hover {
     cursor: pointer;
 }
 
-.buscador button:hover {
+.banner {
+    min-height: 300px;
+    background-image: linear-gradient(rgba(30, 35, 73, 0.80), rgba(30, 35, 73, 0.35)), url("../img/banner-tecnologia.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 60px;
+}
+
+.banner-texto {
+    max-width: 600px;
+}
+
+.banner h2 {
+    font-size: 42px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.banner p {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.boton-banner {
+    display: inline-block;
+    background-color: #BEDAFF;
+    color: #1E2349;
+    text-decoration: none;
+    padding: 14px 25px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.boton-banner:hover {
     background-color: white;
 }
 
-.contacto-nav {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 0 20px;
-}
-
-.contacto-nav span {
-    color: white;
-    font-weight: 600;
-    margin-right: 5px;
-}
-
-.contacto-nav a {
-    padding: 8px;
-    font-size: 18px;
-}
-
-.contacto-nav a:hover {
-    background-color: transparent;
-    color: #BEDAFF;
-}
-
-    /* ===== Footer institucional ===== */
+/* ===== FOOTER ===== */
 footer {
     background-color: #1E2349;
     color: #ffffff;
