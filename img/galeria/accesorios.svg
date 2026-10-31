@@ -14,5 +14,5 @@
       <path d="M4 8a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 0-1-1h-1v-1a2 2 0 0 0-2-2H4zm1 3h9v2H5v-2z"/>
     </g>
   </g>
-  <text x="240" y="255" text-anchor="middle" font-family="'Poppins', Arial, sans-serif" font-size="24" font-weight="600" fill="#ffffff">Accesorios certificados</text>
+  <text x="240" y="255" text-anchor="middle" font-family="'Gotham', 'Montserrat', Arial, sans-serif" font-size="24" font-weight="500" fill="#ffffff">Accesorios certificados</text>
 </svg>

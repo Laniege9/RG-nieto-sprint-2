@@ -6,63 +6,85 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Servicios y Portafolio | RG Nieto El Salvador</title>
+	<title>Servicios y portafolio | RG Nieto El Salvador</title>
 	<meta name="description" content="Servicios técnicos, catálogo destacado y galería de RG Nieto, tu aliado tecnológico en El Salvador.">
 
-	<link rel="icon" href="img/logo1.png" type="image/png">
+	<link rel="icon" href="img/logo-isotipo.png" type="image/png">
 
-	<link rel="stylesheet" href="css/estilos.css">
-	<link rel="stylesheet" href="css/persona2.css">
+	<!-- Tipografía: Montserrat como sustituto web de Gotham (Manual de Identidad Visual) -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+	<link rel="stylesheet" href="css/tipografia.css">
+	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="css/persona2.css">
+	<link rel="stylesheet" href="css/paginas.css">
 	<link rel="stylesheet" href="css/responsivo.css">
 
 </head>
 
 <body>
 
-	<header>
-		<img src="img/logo1.png" alt="Logotipo de RG Nieto">
-		<h1>RG Nieto, tu aliado tecnológico en El Salvador</h1>
+	<a class="saltar" href="#contenido">Saltar al contenido</a>
 
-		<div class="buscador">
-			<input type="text" placeholder="¿Qué estás buscando?">
-			<button type="button">🔍</button>
+	<header class="encabezado">
+		<div class="encabezado-interno">
+
+			<a href="index.html" class="marca" aria-label="RG Nieto, ir al inicio">
+				<img src="img/logo-isotipo.png" alt="" width="52" height="52">
+				<span class="marca-texto">
+					<span class="marca-nombre">RG Nieto</span>
+					<span class="marca-lema">Tu aliado tecnológico en El Salvador</span>
+				</span>
+			</a>
+
+			<form class="buscador" action="index.html" method="get" role="search">
+				<label for="buscar" class="solo-lectores">Buscar productos</label>
+				<input id="buscar" type="search" name="q" placeholder="¿Qué estás buscando?" autocomplete="off">
+				<button type="submit" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+			</form>
+
+			<div class="contacto-rapido" aria-label="Contacto rápido">
+				<a href="https://wa.me/50376274333" title="WhatsApp" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+				<a href="mailto:contacto@rgnieto.com" title="Correo electrónico" aria-label="Correo electrónico"><i class="fa-solid fa-envelope"></i></a>
+				<a href="https://www.facebook.com/share/1EexZE797u/" title="Facebook" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
+				<a href="https://www.instagram.com/rgnieto_sv" title="Instagram" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+			</div>
+
 		</div>
 	</header>
 
-	<nav>
-		<ul>
-			<li><a href="index.html#inicio">Inicio</a></li>
-			<li><a href="index.html#celulares">Celulares</a></li>
-			<li><a href="index.html#accesorios">Accesorios</a></li>
-			<li><a href="index.html#gaming">Gaming</a></li>
-			<li><a href="index.html#audio">Audio</a></li>
-			<li><a href="index.html#productividad">Productividad</a></li>
-			<li><a href="index.html#reparaciones">Reparaciones</a></li>
-			<li><a href="nosotros.html">Nosotros</a></li>
-			<li><a href="servicios.html" class="activo">Servicios</a></li>
-			<li><a href="faq.html">FAQ</a></li>
-			<li><a href="blog.html">Blog</a></li>
-			<li><a href="contacto.html">Contacto</a></li>
+	<nav class="navegacion" aria-label="Navegación principal">
 
-			<li class="contacto-nav"><span>Síguenos</span>
-				<a href="https://wa.me/50376274333" title="WhatsApp" target="_blank" rel="noopener">
-					<i class="fa-brands fa-whatsapp"></i>
-				</a>
-				<a href="mailto:contacto@rgnieto.com" title="Correo electrónico">
-					<i class="fa-solid fa-envelope"></i>
-				</a>
-				<a href="#" title="Facebook">
-					<i class="fa-brands fa-facebook"></i>
-				</a>
-				<a href="#" title="Instagram">
-					<i class="fa-brands fa-instagram"></i>
-				</a>
+		<button class="menu-boton" type="button" aria-expanded="false" aria-controls="menu-principal">
+			<i class="fa-solid fa-bars" aria-hidden="true"></i> Menú
+		</button>
+
+		<ul class="menu" id="menu-principal">
+			<li><a href="index.html">Inicio</a></li>
+			<li class="submenu">
+				<button class="submenu-boton" type="button" aria-expanded="false" aria-controls="submenu-productos">
+					Productos <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+				</button>
+				<ul class="submenu-lista" id="submenu-productos">
+					<li><a href="index.html#celulares"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i> Celulares</a></li>
+					<li><a href="index.html#accesorios"><i class="fa-solid fa-plug" aria-hidden="true"></i> Accesorios</a></li>
+					<li><a href="index.html#gaming"><i class="fa-solid fa-gamepad" aria-hidden="true"></i> Gaming</a></li>
+					<li><a href="index.html#audio"><i class="fa-solid fa-headphones" aria-hidden="true"></i> Audio</a></li>
+					<li><a href="index.html#productividad"><i class="fa-solid fa-laptop" aria-hidden="true"></i> Productividad</a></li>
+					<li><a href="index.html#reparaciones"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i> Reparaciones</a></li>
+				</ul>
 			</li>
+			<li><a href="nosotros.html">Nosotros</a></li>
+			<li><a href="servicios.html" aria-current="page">Servicios</a></li>
+			<li><a href="blog.html">Blog</a></li>
+			<li><a href="faq.html">Preguntas frecuentes</a></li>
+			<li><a href="contacto.html">Contacto</a></li>
 		</ul>
+
 	</nav>
 
 	<section class="banner-secundario">
@@ -74,7 +96,7 @@
 		</div>
 	</section>
 
-	<main>
+	<main id="contenido">
 
 		<section class="seccion" id="lista-servicios">
 			<div class="contenedor">
@@ -298,31 +320,56 @@
 		<img src="img/galeria/innovacion.jpg" alt="Innovación constante RG Nieto">
 	</div>
 
-	<footer id="contacto">
+	<footer class="pie">
 
-		<p>© 2026 RG Nieto, todos los derechos reservados.</p>
+		<div class="pie-interno">
 
-		<p>Metrocentro: 2261-0016 · Metrosur: 2261-1188 · WhatsApp: 7627-4333</p>
+			<div class="pie-marca">
+				<img src="img/logo-negativo.png" alt="" width="64" height="64">
+				<span class="marca-nombre">RG Nieto</span>
+				<p>Venta de tecnología y servicio técnico especializado. Tu aliado tecnológico en El Salvador.</p>
+			</div>
 
-		<p>Email: contacto@rgnieto.com</p>
+			<div>
+				<h2>Navegación</h2>
+				<ul>
+					<li><a href="index.html">Inicio</a></li>
+					<li><a href="nosotros.html">Nosotros</a></li>
+					<li><a href="servicios.html">Servicios</a></li>
+					<li><a href="blog.html">Blog</a></li>
+					<li><a href="faq.html">Preguntas frecuentes</a></li>
+					<li><a href="contacto.html">Contacto</a></li>
+				</ul>
+			</div>
 
-		<div class="redes-sociales">
-			<a href="https://www.facebook.com/share/1EexZE797u/" target="_blank" rel="noopener" title="Facebook">
-				<i class="fa-brands fa-facebook"></i>
-			</a>
-			<a href="https://www.instagram.com/rgnieto_sv" target="_blank" rel="noopener" title="Instagram">
-				<i class="fa-brands fa-instagram"></i>
-			</a>
-			<a href="https://www.tiktok.com/@rg.nieto.sa.de.cv" target="_blank" rel="noopener" title="TikTok">
-				<i class="fa-brands fa-tiktok"></i>
-			</a>
-			<a href="https://wa.me/50376274333" target="_blank" rel="noopener" title="WhatsApp">
-				<i class="fa-brands fa-whatsapp"></i>
-			</a>
+			<div>
+				<h2>Contacto</h2>
+				<ul>
+					<li><i class="fa-solid fa-store" aria-hidden="true"></i>Metrocentro: <a href="tel:+50322610016">2261-0016</a></li>
+					<li><i class="fa-solid fa-store" aria-hidden="true"></i>Metrosur: <a href="tel:+50322611188">2261-1188</a></li>
+					<li><i class="fa-brands fa-whatsapp" aria-hidden="true"></i>WhatsApp: <a href="https://wa.me/50376274333" target="_blank" rel="noopener">7627-4333</a></li>
+					<li><i class="fa-solid fa-envelope" aria-hidden="true"></i><a href="mailto:contacto@rgnieto.com">contacto@rgnieto.com</a></li>
+				</ul>
+			</div>
+
+			<div>
+				<h2>Síguenos</h2>
+				<div class="redes-sociales">
+					<a href="https://www.facebook.com/share/1EexZE797u/" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
+					<a href="https://www.instagram.com/rgnieto_sv" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+					<a href="https://www.tiktok.com/@rg.nieto.sa.de.cv" aria-label="TikTok" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i></a>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="pie-legal">
+			<p>© 2026 RG Nieto. Todos los derechos reservados.</p>
 		</div>
 
 	</footer>
 
+	<script src="js/navegacion.js"></script>
 	<script src="js/carrusel.js"></script>
 
 </body>

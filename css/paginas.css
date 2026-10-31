@@ -1,0 +1,116 @@
+/* ==========================================================================
+   PÁGINAS FAQ, BLOG Y CONTACTO — ajustes comunes (Sprint III, Persona 1)
+   Los componentes Bootstrap de estas páginas se personalizan en
+   css/estilos-persona3.css. Aquí van los elementos propios del sitio
+   que esas páginas comparten: títulos de grupo, artículos del blog y
+   bloque de ayuda.
+   ========================================================================== */
+
+.contenedor-angosto {
+    max-width: 900px;
+}
+
+/* ---------- Títulos de grupo (Preguntas frecuentes, Contacto) ---------- */
+
+.faq-grupo {
+    margin-bottom: 44px;
+}
+
+.faq-titulo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 18px 0;
+}
+
+.faq-titulo i {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: var(--azul-pastel);
+    color: var(--azul-medianoche);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+}
+
+.faq-ayuda {
+    background-color: var(--fondo-claro);
+    border-radius: 14px;
+    padding: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.faq-ayuda p {
+    margin: 0;
+}
+
+.faq-ayuda strong {
+    font-weight: var(--peso-bold);
+    color: var(--texto-principal);
+}
+
+/* ---------- Blog ---------- */
+
+.blog-meta {
+    font-size: var(--fs-nota);
+    color: var(--texto-apoyo);
+}
+
+.articulo {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 44px 48px;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 14px rgba(30, 35, 73, 0.06);
+    scroll-margin-top: 80px;
+}
+
+.articulo h2 {
+    font-size: var(--fs-h2);
+    margin: 10px 0 8px 0;
+}
+
+.articulo > .blog-meta {
+    margin-bottom: 24px;
+}
+
+.articulo h3 {
+    margin: 26px 0 8px 0;
+}
+
+.articulo p {
+    margin: 0 0 14px 0;
+}
+
+.articulo a:not(.enlace-volver) {
+    color: var(--azul-medianoche);
+    font-weight: var(--peso-medium);
+}
+
+.enlace-volver {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    font-size: var(--fs-secundario);
+    font-weight: var(--peso-medium);
+    color: var(--violeta-azulado);
+    text-decoration: none;
+}
+
+.enlace-volver:hover {
+    color: var(--azul-medianoche);
+}
+
+@media (max-width: 900px) {
+    .articulo {
+        padding: 30px 22px;
+    }
+}
